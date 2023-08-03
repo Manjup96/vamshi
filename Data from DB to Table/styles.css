@@ -1,0 +1,87 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 0; /* Reset default margin */
+    font-family: sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%; /* Set a maximum width for the table */
+    margin: 2rem auto; /* Center the table horizontally and add some spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    border-radius: 8px; /* Add rounded corners */
+    
+
+}
+
+th, td {
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Add a border at the bottom of each cell */
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tbody {
+    background-color: #eee;
+    color: #555;
+}
+
+
+/* Mobile View */
+@media screen and (max-width: 600px) {
+    thead {
+        display: none;
+    }
+
+    td {
+        display: block;
+        padding: 1rem 1rem 0;
+    }
+
+    td::before {
+        content: attr(data-label);
+        float: left;
+        margin-right: 1rem;
+        font-weight: bold;
+    }
+
+    td:last-child {
+        padding-bottom: 1rem;
+    }
+}
+
+/* iPad (Tablet) View */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Adjust styles for iPad view */
+    table {
+        margin-bottom: 800px;
+        width: 90%;
+    }
+    td {
+        padding: 0.8rem;
+    }
+
+    td::before {
+        content: "";
+        display: none;
+    }
+}
+.autocomplete-item {
+    padding: 8px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.autocomplete-item:hover {
+    background-color: #f9f9f9;
+}
